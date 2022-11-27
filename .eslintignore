@@ -1,0 +1,11 @@
+*.css
+*.svg
+.next
+# *.d.ts
+node_modules
+yarn.lock
+package-lock.json
+public
+tools
+coverage
+*.config.js

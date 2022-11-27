@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 
-const App = () => {
+const App: React.FC = (): ReactElement => {
   const [input, setInput] = useState('');
   const [code, setCode] = useState('');
 
-  const onClick = async () => {
-    console.log(input);
+  const onClick = (): void => {
+    console.info(input);
     setCode(input);
   };
 
   return (
     <div>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      ></textarea>
+      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
       <div>
-        <button onClick={onClick}>Submit</button>
+        <button type="button" onClick={onClick}>
+          Submit
+        </button>
       </div>
       <pre>{code}</pre>
     </div>
